@@ -67,7 +67,7 @@ def dist_between_two_galaxies(galaxy1: tuple, galaxy2: tuple) -> int:
     """Returns the factor between galaxy1 and galaxy2"""
 
     x = abs(galaxy1[0] - galaxy2[0])
-    y = abs(galaxy1[1] - galaxy1[1])
+    y = abs(galaxy1[1] - galaxy2[1])
 
     return x + y
 
