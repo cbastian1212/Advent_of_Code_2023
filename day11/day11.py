@@ -28,7 +28,7 @@ def main():
 
     print()
     print("Part 1 result:")
-    print(f"Total factor between galaxies = {total_distance}")
+    print(f"Total distance between galaxies = {total_distance}")
     print()
 
     galaxies_part2 = recalculate_galaxies_coordinates(
@@ -37,7 +37,7 @@ def main():
     total_distance = dist_between_all_galaxies(galaxies_part2)
 
     print("Part 2 result:")
-    print(f"Total factor between galaxies = {total_distance}")
+    print(f"Total distance between galaxies = {total_distance}")
     print()
 
 
@@ -57,7 +57,7 @@ def find_empty_cols(universe: list) -> list:
     empty_cols = []
 
     for i, _ in enumerate(universe[0]):
-        if not "#" in set(universe[j][i] for j in range(len(universe))):
+        if "#" not in set(universe[j][i] for j in range(len(universe))):
             empty_cols.append(i)
 
     return empty_cols
