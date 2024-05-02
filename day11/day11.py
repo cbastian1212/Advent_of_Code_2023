@@ -105,15 +105,8 @@ def recalculate_galaxies_coordinates(
     new_galaxies = []
 
     for galaxy in galaxies:
-        row_offset = 0
-        for empty_row in empty_rows:
-            if empty_row < galaxy[0]:
-                row_offset += 1
-
-        col_offset = 0
-        for empty_col in empty_cols:
-            if empty_col < galaxy[1]:
-                col_offset += 1
+        row_offset = sum(1 for row in empty_rows if row < galaxy[0])
+        col_offset = sum(1 for col in empty_cols if col < galaxy[1])
 
         new_galaxy = (
             galaxy[0] - row_offset + row_offset * factor,
